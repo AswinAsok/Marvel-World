@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Box from "@material-ui/core/Box";
-import Grid from '@material-ui/core/Grid'
+import Grid from "@material-ui/core/Grid";
 import "./Body.css";
 import SearchBox from "../SearchBox/SearchBox";
 import DispCard from "../DispCard/DispCard";
-import Divider from '@material-ui/core/Divider';
+import Disp404 from "../Disp404/Disp404";
+import Divider from "@material-ui/core/Divider";
 
 const defaultProps = {
   bgcolor: "#518cca",
@@ -23,6 +24,8 @@ const Body = ({
   setSearch,
   searchClick,
   setSearchClick,
+  nodbtn,
+  setNodbtn,
 }) => {
   return (
     <div className="body-container">
@@ -37,14 +40,27 @@ const Body = ({
               fetchdata={fetchdata}
               searchClick={searchClick}
               setSearchClick={setSearchClick}
+              nodbtn={nodbtn}
+              setNodbtn={setNodbtn}
             />
           </Grid>
           <br></br>
-          <Divider/>
+          <Divider />
           <br></br>
+
           {data.map(function (eachdata, i) {
             return <DispCard eachdata={eachdata} index={i} />;
           })}
+
+          {(() => {
+            if (data.length === 0 && nodbtn) {
+              return (
+                <div>
+                  <Disp404 search={search} />
+                </div>
+              );
+            }
+          })()}
         </Box>
       </Grid>
     </div>

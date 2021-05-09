@@ -15,7 +15,7 @@ const DispCard = ({ eachdata, index }) => {
   return (
     <div>
       {(() => {
-        if (eachdata.description) {
+        if (eachdata.name) {
           return (
             <Grid
               container

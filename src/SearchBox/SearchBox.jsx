@@ -23,6 +23,8 @@ const SearchBox = ({
   fetchdata,
   searchClick,
   setSearchClick,
+  nodbtn,
+  setNodbtn,
 }) => {
   const classes = useStyles();
   return (
@@ -43,6 +45,7 @@ const SearchBox = ({
           onClick={() => {
             if (search.length > 0) {
               setSearchClick(true);
+              setNodbtn(true);
             }
           }}
           variant="outlined"
