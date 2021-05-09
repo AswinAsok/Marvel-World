@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
  
 }));
 
-const SearchBox = ({ search, setSearch }) => {
+const SearchBox = ({ search, setSearch, data, setData, fetchdata }) => {
   const classes = useStyles();
   return (
     <div className="Search-box">

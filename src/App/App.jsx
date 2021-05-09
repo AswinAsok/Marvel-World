@@ -18,7 +18,7 @@ function App() {
         `https://gateway.marvel.com:443/v1/public/characters?apikey=${PublicKey}&ts=${timeStamp}&hash=${md5Hash}`
       )
       .then((res) => {
-        setData(res.data);
+        setData(res.data.data.results);
       });
   };
 
@@ -29,7 +29,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Body />
+      {console.log(data)}
+      <Body data={data} setData={setData} fetchdata={fetchdata}/>
     </div>
   );
 }
