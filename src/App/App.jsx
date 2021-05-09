@@ -1,22 +1,26 @@
+
 import React, { useState, useEffect } from "react";
 import Body from "../Body/Body";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer"
 import "./App.css";
 import CryptoJS from "crypto-js";
 import axios from "axios";
 
+const { REACT_APP_PRIVATE_KEY, REACT_APP_PUBLIC_KEY } = process.env;
+
 function App() {
   const [data, setData] = useState([]);
-  const [search, setSearch] = useState("Iron Man");
+  const [search, setSearch] = useState("Spider-Man");
   const [searchClick, setSearchClick] = useState(false);
 
   const fetchdata = () => {
-    const PublicKey = "da8461dc7ffeb7b5eb1d538469d985c0";
-    const PrivateKey = "dc0194e8887ce630a6f41e28b75a5fd30cfd49cc";
+    const PublicKey = REACT_APP_PUBLIC_KEY;
+    const PrivateKey = REACT_APP_PRIVATE_KEY;
     var timeStamp = +new Date();
     var md5Hash = CryptoJS.MD5(`${timeStamp}${PrivateKey}${PublicKey}`);
-    console.log(md5Hash.toString())
-    console.log(timeStamp)
+    console.log(md5Hash.toString());
+    console.log(timeStamp);
     axios
       .get(
         `https://gateway.marvel.com:443/v1/public/characters?apikey=${PublicKey}&ts=${timeStamp}&hash=${md5Hash}&nameStartsWith=${search}`
@@ -25,8 +29,8 @@ function App() {
         setData(res.data.data.results);
       });
 
-    if(searchClick){
-      setSearchClick(false)
+    if (searchClick) {
+      setSearchClick(false);
     }
   };
 
@@ -46,6 +50,7 @@ function App() {
         searchClick={searchClick}
         setSearchClick={setSearchClick}
       />
+      <Footer />
     </div>
   );
 }

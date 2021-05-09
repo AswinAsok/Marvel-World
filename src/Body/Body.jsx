@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Box from "@material-ui/core/Box";
-import Grid from "@material-ui/core/Grid";
+import Grid from '@material-ui/core/Grid'
 import "./Body.css";
 import SearchBox from "../SearchBox/SearchBox";
 import DispCard from "../DispCard/DispCard";
+import Divider from '@material-ui/core/Divider';
 
 const defaultProps = {
   bgcolor: "#518cca",
   borderColor: "text.primary",
   marginTop: "1rem",
+  paddingBottom: "2rem",
   style: { width: "100%", minHeight: "90vh" },
   borderRadius: "30px",
 };
@@ -37,6 +39,8 @@ const Body = ({
               setSearchClick={setSearchClick}
             />
           </Grid>
+          <br></br>
+          <Divider/>
           <br></br>
           {data.map(function (eachdata, i) {
             return <DispCard eachdata={eachdata} index={i} />;

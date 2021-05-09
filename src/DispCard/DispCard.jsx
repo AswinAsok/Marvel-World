@@ -7,19 +7,30 @@ const defaultProps = {
   m: 1,
   padding: 1,
   borderColor: "text.primary",
-  style: { width: "80%"},
+  style: { width: "80%" },
   borderRadius: "0px 15px",
 };
 
 const DispCard = ({ eachdata, index }) => {
   return (
     <div>
-      <Grid container direction="column" justify="center" alignItems="center">
-        <Box {...defaultProps}>
-          <h1>{eachdata.name}</h1>
-          <p>{eachdata.description}</p>
-        </Box>
-      </Grid>
+      {(() => {
+        if (eachdata.description) {
+          return (
+            <Grid
+              container
+              direction="column"
+              justify="center"
+              alignItems="center"
+            >
+              <Box {...defaultProps}>
+                <h1>{eachdata.name}</h1>
+                <p>{eachdata.description}</p>
+              </Box>
+            </Grid>
+          );
+        }
+      })()}
     </div>
   );
 };
