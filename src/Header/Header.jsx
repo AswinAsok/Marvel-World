@@ -5,7 +5,7 @@ import "./Header.css";
 
 const defaultProps = {
   bgcolor: "#e23636",
-  style: { width: "100%", height: "12vh" },
+  style: { width: "100%" },
   borderRadius: "0px 0px 30px 30px",
 };
 

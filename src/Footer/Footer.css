@@ -6,3 +6,12 @@ a{
 .Footer-container{
     color: white;
 }
+
+h1{
+    font-family: Marvel;
+  font-size: 18px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 8.4px;
+}

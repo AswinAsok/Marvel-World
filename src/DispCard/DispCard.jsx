@@ -55,10 +55,10 @@ const DispCard = ({ eachdata, index }) => {
                   src={source}
                   className={classes.large}
                 />
-                
                 <h1>{eachdata.name}</h1>
-               
                 <p>{eachdata.description}</p>
+                <a href={eachdata.urls[0].url}><h1><u>Know More About "{eachdata.name}"</u></h1></a>
+                {console.log(eachdata.urls[1].url)}
                 </Grid>
               </Box>
             </Grid>
