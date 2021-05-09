@@ -12,7 +12,7 @@ const defaultProps = {
   borderColor: "text.primary",
   marginTop: "1rem",
   paddingBottom: "2rem",
-  style: { width: "100%", minHeight: "90vh" },
+  style: { width: "100%", minHeight: "68vh" },
   borderRadius: "30px",
 };
 
