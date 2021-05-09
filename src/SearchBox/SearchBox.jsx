@@ -1,11 +1,30 @@
-import React from 'react'
+/* eslint-disable no-use-before-define */
+import React from "react";
+import TextField from "@material-ui/core/TextField";
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import { makeStyles } from "@material-ui/core/styles";
+import './SearchBox.css'
 
-const SearchBox = ({search, setSearch}) => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+const useStyles = makeStyles((theme) => ({
+ 
+}));
 
-export default SearchBox
+const SearchBox = ({ search, setSearch }) => {
+  const classes = useStyles();
+  return (
+    <div className="Search-box">
+      <Autocomplete
+        id="combo-box-demo"
+        // options={top100Films}
+        // getOptionLabel={(option) => option.title}
+        style={{ width: 300, color: "white" }}
+        classes={classes}
+        renderInput={(params) => (
+          <TextField {...params} label="Combo box" variant="outlined" />
+        )}
+      />
+    </div>
+  );
+};
+
+export default SearchBox;
