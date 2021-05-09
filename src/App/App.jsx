@@ -6,7 +6,7 @@ import CryptoJS from "crypto-js";
 import axios from "axios";
 
 function App() {
-  const [data, setData] = useState("");
+  const [data, setData] = useState([]);
 
   const fetchdata = () => {
     const PublicKey = "da8461dc7ffeb7b5eb1d538469d985c0";
@@ -29,7 +29,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {console.log(data)}
       <Body data={data} setData={setData} fetchdata={fetchdata}/>
     </div>
   );

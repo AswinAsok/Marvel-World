@@ -23,13 +23,10 @@ const Body = ({ data, setData, fetchdata }) => {
           <Grid container direction="row" justify="center" alignItems="center">
             {/* <SearchBox search={search} setSearch={setSearch} data={data} setData={setData} fetchdata={fetchdata}/> */}
           </Grid>
-
-
-          <Grid container direction="row" justify="center" alignItems="center">
-            <DispCard data={data} setData={setData} />
-          </Grid>
-          
-
+          <br></br>
+          {data.map(function (eachdata, i) {
+            return <DispCard eachdata={eachdata} index={i} />;
+          })}
         </Box>
       </Grid>
     </div>

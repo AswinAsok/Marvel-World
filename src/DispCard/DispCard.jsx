@@ -1,20 +1,25 @@
 import React from "react";
 import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid";
 
 const defaultProps = {
   bgcolor: "#f78f3f",
   m: 1,
-
+  padding: 1,
   borderColor: "text.primary",
-  style: { width: "100%", minHeight: "5rem" },
+  style: { width: "80%"},
+  borderRadius: "0px 15px",
 };
 
-const DispCard = ({data, setData}) => {
+const DispCard = ({ eachdata, index }) => {
   return (
     <div>
-      <Box {...defaultProps}>
-        
-      </Box>
+      <Grid container direction="column" justify="center" alignItems="center">
+        <Box {...defaultProps}>
+          <h1>{eachdata.name}</h1>
+          <p>{eachdata.description}</p>
+        </Box>
+      </Grid>
     </div>
   );
 };
