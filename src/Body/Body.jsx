@@ -1,7 +1,8 @@
-import React from "react";
+import React,{useState} from "react";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import './Body.css'
+import SearchBox from "../SearchBox/SearchBox";
 
 const defaultProps = {
   bgcolor: "#504a4a",
@@ -12,11 +13,14 @@ const defaultProps = {
 };
 
 const Body = () => {
+
+  const[search, setSearch] = useState("");
+
   return (
     <div className="body-container">
       <Grid container direction="row" justify="center" alignItems="center">
         <Box {...defaultProps} borderColor="primary.main">
-          Hey Body
+         <SearchBox search={search} setSearch={setSearch}/>
         </Box>
       </Grid>
     </div>
