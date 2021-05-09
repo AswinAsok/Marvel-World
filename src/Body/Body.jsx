@@ -13,15 +13,29 @@ const defaultProps = {
   borderRadius: "30px",
 };
 
-const Body = ({ data, setData, fetchdata }) => {
-  const [search, setSearch] = useState("");
-
+const Body = ({
+  data,
+  setData,
+  fetchdata,
+  search,
+  setSearch,
+  searchClick,
+  setSearchClick,
+}) => {
   return (
     <div className="body-container">
       <Grid container direction="row" justify="center" alignItems="center">
         <Box {...defaultProps} borderColor="primary.main">
           <Grid container direction="row" justify="center" alignItems="center">
-            {/* <SearchBox search={search} setSearch={setSearch} data={data} setData={setData} fetchdata={fetchdata}/> */}
+            <SearchBox
+              search={search}
+              setSearch={setSearch}
+              data={data}
+              setData={setData}
+              fetchdata={fetchdata}
+              searchClick={searchClick}
+              setSearchClick={setSearchClick}
+            />
           </Grid>
           <br></br>
           {data.map(function (eachdata, i) {
